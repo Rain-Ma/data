@@ -1,0 +1,39 @@
+private int points;
+private double risk;
+public class player
+{
+  public player()
+  {
+    int points =0;
+  }
+  
+  public player(int x, double y)
+  {
+    points =x;
+    risk = y;
+    }
+  
+  public int getPoints()
+  {
+    return points;
+  }
+  
+  public double getRisk()
+  {
+    return risk;
+  }
+  
+  public void addPoints(int x)
+  {
+    points = points+x;
+  }
+  
+  public void setRisk(double x)
+  {
+    risk = x;
+    }
+  
+
+
+
+}
