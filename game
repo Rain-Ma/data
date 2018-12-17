@@ -5,6 +5,76 @@ public class Data
 {
   public static void main(String[]args)
   {
+    Player a = new Player();
+    int i=0
+    while(a.getPoints()<20)
+    {
+      int point = roll();
+      if(draw(a))
+      {
+        point = point * multipier();
+      }
+      
+      a.getPoints(point);
+      System.out.println(a.getPoints());
+    
+    
+    
+    }
+    System.out.println(a.getPoints());
+    System.out.println(i);
+  }
+  
+  public int roll()
+  {
+    int a = (int)Math.random()*10;
+    if(a<=1)
+    {
+      return -1;
+    }
+    else if(a<=3)
+    {
+      return 1;
+    }
+    else if(a<=5)
+    {
+      return -2;
+    }
+    else if(a<=7)
+    {
+      return 2;
+    }
+    else if(a==8)
+    {
+      return -5;
+    }
+    else if(a==9)
+    {
+      return 5;
+    }
+    else
+    {
+      return 0;
+    }
   
   }
+  
+  public boolean draw(Player a)
+  {
+    double x = Math.random();
+    if(x>a.getRisk())
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+  
+  public int multiplier()
+  {
+  
+  }
+  
 }
