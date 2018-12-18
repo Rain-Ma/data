@@ -1,13 +1,13 @@
-private int points;
-private double risk;
-public class player
+public class Player
 {
-  public player()
+    private int points;
+    private double risk;
+  public Player()
   {
     int points =0;
   }
   
-  public player(int x, double y)
+  public Player(int x, double y)
   {
     points =x;
     risk = y;
