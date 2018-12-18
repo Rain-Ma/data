@@ -1,33 +1,36 @@
 
-
-
-public class Data
+public class Game
 {
   public static void main(String[]args)
   {
-    Player a = new Player();
-    int i=0
+    Player a = new Player(0,0);
+    int i=0;
     while(a.getPoints()<20)
     {
       int point = roll();
       if(draw(a))
       {
-        point = point * multipier();
+        point = point * multiplier();
       }
       
-      a.getPoints(point);
-      System.out.println(a.getPoints());
-    
-    
-    
+      a.addPoints(point);
+      if(a.getPoints()>0)
+      {
+          a.setRisk(0);
+        }
+        else
+        {
+            a.setRisk(1);
+        }
+      i++;     
     }
     System.out.println(a.getPoints());
-    System.out.println(i);
+    System.out.println("it took " +i+" many rounds");
   }
   
-  public int roll()
+  public static int roll()
   {
-    int a = (int)Math.random()*10;
+    int a = (int)(Math.random()*10);
     if(a<=1)
     {
       return -1;
@@ -59,10 +62,10 @@ public class Data
   
   }
   
-  public boolean draw(Player a)
+  public static boolean draw(Player a)
   {
     double x = Math.random();
-    if(x>a.getRisk())
+    if(x<a.getRisk())
     {
       return true;
     }
@@ -72,9 +75,17 @@ public class Data
     }
   }
   
-  public int multiplier()
+  public static int multiplier()
   {
-  
+      double x = Math.random();
+      if(x>=0.5)
+      {
+          return 2;
+        }
+        else
+        {
+            return 0;
+        }
   }
   
 }
